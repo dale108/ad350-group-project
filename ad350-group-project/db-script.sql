@@ -450,5 +450,32 @@ INSERT INTO voting_machines_at_site(voting_site_id, voting_machine_id, voting_ma
 ;
 
 
+INSERT INTO `election_worker_roles` (`role_id`,`role_name`) VALUES (1,'Clerk');
+INSERT INTO `election_worker_roles` (`role_id`,`role_name`) VALUES (2,'Assistance Clerk');
+INSERT INTO `election_worker_roles` (`role_id`,`role_name`) VALUES (3,'Equipment Operator');
+INSERT INTO `election_worker_roles` (`role_id`,`role_name`) VALUES (4,'Inspector');
+INSERT INTO `election_worker_roles` (`role_id`,`role_name`) VALUES (5,'Poll Deputy');
+INSERT INTO `election_worker_roles` (`role_id`,`role_name`) VALUES (6,'Subsitute');
+
+INSERT INTO `address` (`address_id`,`street_address`,`zip_code`,`city`,`state`) VALUES (1,'1701 N State St',39202,'Summit','MS');
+INSERT INTO `address` (`address_id`,`street_address`,`zip_code`,`city`,`state`) VALUES (2,'115 Broadway E',98102,'Seattle','WA');
+INSERT INTO `address` (`address_id`,`street_address`,`zip_code`,`city`,`state`) VALUES (3,'815 Cheyenne Meadows Rd',80906,'Colorado Springs','CO');
+INSERT INTO `address` (`address_id`,`street_address`,`zip_code`,`city`,`state`) VALUES (4,'801 Main St',39428,'Summit','MS');
+INSERT INTO `address` (`address_id`,`street_address`,`zip_code`,`city`,`state`) VALUES (5,'1606 15th Ave E',98112,'Seattle','WA');
+INSERT INTO `address` (`address_id`,`street_address`,`zip_code`,`city`,`state`) VALUES (6,'500 17th Ave',98122,'Seattle','WA');
+
+INSERT INTO `election_worker` (`election_worker_id`,`name`,`phone_number`,`ssn`,`role_id`) VALUES (1,'Chris Smith',2063465790,'539236758',1);
+INSERT INTO `election_worker` (`election_worker_id`,`name`,`phone_number`,`ssn`,`role_id`) VALUES (2,'Jamie Cox',2087675686,'538675678',2);
+INSERT INTO `election_worker` (`election_worker_id`,`name`,`phone_number`,`ssn`,`role_id`) VALUES (3,'Daniel Lee',2064356565,'536787685',3);
+INSERT INTO `election_worker` (`election_worker_id`,`name`,`phone_number`,`ssn`,`role_id`) VALUES (4,'Jenny Chang',2804547896,'537678686',4);
+INSERT INTO `election_worker` (`election_worker_id`,`name`,`phone_number`,`ssn`,`role_id`) VALUES (5,'Felix Gunn',2085647896,'539567896',5);
+INSERT INTO `election_worker` (`election_worker_id`,`name`,`phone_number`,`ssn`,`role_id`) VALUES (6,'Ashley Guzman',2065467896,'538769805',6);
+
+INSERT INTO `election_worker` (`election_worker_id`,`name`,`phone_number`,`ssn`,`role_id`) VALUES (1,'Chris Smith',2067867980,'539434940',1);
+INSERT INTO `election_worker` (`election_worker_id`,`name`,`phone_number`,`ssn`,`role_id`) VALUES (2,'Dimitri Hutchinson',2067679459,'527965968',2);
+INSERT INTO `election_worker` (`election_worker_id`,`name`,`phone_number`,`ssn`,`role_id`) VALUES (3,'Dalton Benjamin',2064569709,'539685969',3);
+INSERT INTO `election_worker` (`election_worker_id`,`name`,`phone_number`,`ssn`,`role_id`) VALUES (4,'Angelica Ford',2057959459,'539584959',4);
+INSERT INTO `election_worker` (`election_worker_id`,`name`,`phone_number`,`ssn`,`role_id`) VALUES (5,'Felicity Gallegos',2059485998,'539593859',5);
+INSERT INTO `election_worker` (`election_worker_id`,`name`,`phone_number`,`ssn`,`role_id`) VALUES (6,'Oliver Schultz',2093993939,'539593959',6);
 
 
