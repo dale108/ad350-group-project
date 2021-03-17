@@ -330,3 +330,125 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+
+  -------------------- Insert -------------------- 
+
+  INSERT INTO candidate(candidate_id, first_name, last_name, party)
+VALUES 
+    (1, "Jake", "Burt", "Republican"),
+	(2, "Silas", "Cox", "Green Party"),
+    (3, "William", "Miller", "Democrat")		
+;
+
+INSERT INTO ballot(ballot_id, candidate_id, voting_machine_at_site_id)
+VALUES 	
+	(4, 3, 47), 
+	(5, 1, 51), 
+	(6, 1, 49), 
+	(7, 3, 47), 
+	(8, 2, 50)
+;
+
+/*need to change address_id*/
+INSERT INTO voter(voter_id, first_name, last_name, ssn, ballot_id, address_id)
+VALUES 
+    (9, "Rick", "Smith", 12345678, 4, 52),
+	(10, "Molly", "Miller", 67894044, 5, 53),
+    (11, "Bob", "Williams", 9345935, 6, 54),
+    (12, "Erik", "Jones", 4575546, 5, 51),
+    (13, "Sarah", "Davis", 4444636, 8, 55),
+    (14, "David", "Brown", 5454549, 7, 51),
+    (15, "Rebecca", "Wilson", 78787940, 6, 52)        
+;
+
+
+INSERT INTO signature(signature_id, path_to_signature_s3)
+VALUES 	
+    (16, "testing1.url"),
+	(17, "testing2.url"),
+	(18, "testing3.url"),
+    (19, "testing4.url"),
+	(20, "testing5.url"),
+    (21, "testing6.url"),
+	(22, "testing7.url")
+;
+
+
+INSERT INTO voter_signature(signature_id, voter_id)
+VALUES 	
+    (16, 9),
+	(18, 11),
+    (20, 13),
+    (19, 14),
+    (22, 15),
+    (17, 10),
+    (19, 14)
+;
+
+
+INSERT INTO voter_check_in(timstamp, voting_site_id, voter_id, voter_checkin_id)
+    VALUES
+        ("2021-03-01 05:05:30", 46, 9, 23),
+		("2021-03-01 10:12:15", 45, 12, 24),
+        ("2021-03-01 07:45:10", 43, 11, 25),
+        ("2021-03-01 05:05:10", 42, 13, 25),
+        ("2021-03-01 09:23:00", 44, 10, 26),
+        ("2021-03-01 07:45:10", 42, 14, 27),
+        ("2021-03-01 12:34:34", 44, 15, 28)
+;
+
+
+/* Needs to change election_worker_id */
+INSERT INTO workers_assigned_to_site(site_id, date_assigned, election_worker_id)
+    VALUES
+        (29, "2021-03-01 07:40:00", 62),
+        (30, "2021-03-01 07:55:00", 61),
+        (31, "2021-03-01 08:30:00", 63),
+        (32, "2021-03-01 08:30:00", 64)
+;
+
+INSERT INTO days_worked_at_assigment(checked_in, checked_out, site_id, worker_assignment_id)
+    VALUES
+        ("2021-03-01 07:35:55", "2021-03-01 04:00:03", 32, 33),
+        ("2021-03-01 07:45:20", "2021-03-01 04:10:37", 30, 34),
+        ("2021-03-01 08:25:33", "2021-03-01 05:30:26", 29, 35),
+        ("2021-03-01 08:25:33", "2021-03-01 05:30:55", 31, 36)
+;
+
+INSERT INTO district(district_id, district_number, county)
+    VALUES
+        (37, 3, "King"),
+        (38, 7, "Southwest"),
+        (39, 5, "El Paso")
+;
+
+INSERT INTO voting_machines(voting_machine_id, last_error, error_message)
+    VALUES
+       (40, "2021-03-16 01:00:35", "Error with ballot"),
+       (41, "2021-05-17 10:22:08", "Error with system")
+;
+
+INSERT INTO voting_site(voting_site_id, street_address, city, state, zip_code, district_id)
+    VALUES
+        (42, "9600 College Way N", "Seattle", "WA", "98103", 37),
+        (43, "14 E, W Cache La Poudre St", "Colorado Springs", "CO", "80903", 39),
+        (44, "1156 College Dr", "Summit", "MS", "39666", 38),
+        (45, "1701 Broadway", "Seattle", "WA", "98122", 37),
+        (46, "5675 S Academy Blvd", "Colorado Springs", "CO", "80906", 39)
+;
+
+
+INSERT INTO voting_machines_at_site(voting_site_id, voting_machine_id, voting_machine_at_site_id)
+    VALUES
+       (45, 40, 47),
+       (44, 40, 48),
+       (44, 41, 49),
+       (46, 40, 50),
+       (42, 41, 51)
+;
+
+
+
+
